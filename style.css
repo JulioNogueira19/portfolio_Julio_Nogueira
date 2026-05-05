@@ -11,6 +11,7 @@ body.light-mode {
 
 /* Menu de Navegação */
 nav { background-color: #ffffff; padding: 15px; text-align: center; border-bottom: 2px solid #e0e0e0; }
+nav ul { list-style: none; } /* Garante que não apareçam pontos no menu */
 nav ul li { display: inline; margin: 0 15px; }
 nav ul li a { color: #007bff; text-decoration: none; font-weight: bold; }
 
@@ -33,8 +34,32 @@ nav ul li a { color: #007bff; text-decoration: none; font-weight: bold; }
 .contatos-lista li { margin-bottom: 5px; }
 .mt-20 { margin-top: 20px; }
 
-/* Estilos das outras páginas para manter o padrão claro */
+/* Estilos de Formulário */
 .campo { margin-bottom: 15px; display: flex; flex-direction: column; }
-input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px; background: #fff; }
-button { background: #007bff; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 5px; background: #fff; width: 100%; }
+button { background: #007bff; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
 button:hover { background: #0056b3; }
+
+/* --- REGRAS DE RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 768px) {
+    .container { margin: 10px auto; padding: 10px; }
+
+    /* Força o conteúdo a ficar em uma única coluna vertical */
+    .grid-layout { flex-direction: column; }
+
+    .col-esquerda { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        min-width: 100%; 
+    }
+
+    /* Ajusta o menu para ocupar melhor o espaço no celular */
+    nav ul li { display: block; margin: 10px 0; }
+
+    /* Ajusta a imagem de perfil */
+    .foto-perfil img { width: 120px; height: 120px; }
+    
+    /* Garante que os cards ocupem toda a largura disponível */
+    .card { padding: 15px; width: 100%; }
+}
